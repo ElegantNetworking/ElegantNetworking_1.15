@@ -1,0 +1,48 @@
+modLoader="javafml"
+
+loaderVersion="[28,)" 
+
+issueTrackerURL="https://github.com/ElegantNetworking/ElegantNetworking_1.15/issues"
+
+[[mods]] 
+
+modId="elegant_networking" 
+
+version="${version}" 
+ 
+displayName="ElegantNetworking"
+
+displayURL="https://github.com/ElegantNetworking/ElegantNetworkingRoot"
+
+credits='''
+Thx Dahaka for discussions
+Thx @tox1cozZ for drew my attention to the annotations processors
+Thx @Plasticable for advice about using 4.4.1 version of gradle
+Thx @Icosider for consulting on setting up a gradle
+Thx to everyone who uses this framework
+''' 
+
+authors="hohserg" 
+
+description='''
+This is library of useful network system for minecraft modding
+'''
+
+[[dependencies.elegant_networking]] 
+    
+    modId="forge" 
+    
+    mandatory=true 
+    
+    versionRange="[31,)" 
+    
+    ordering="NONE"
+    
+    side="BOTH"
+
+[[dependencies.elegant_networking]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
