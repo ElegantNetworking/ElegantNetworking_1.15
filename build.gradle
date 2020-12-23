@@ -92,16 +92,26 @@ repositories {
     }
 }
 
+configurations {
+    extraLibs
+}
+
 dependencies {
     minecraft 'net.minecraftforge:forge:1.15.2-31.2.47'
 
     compile fg.deobf("codechicken:CodeChickenLib:1.15.2-3.3.4.402:universal")
+
+    compile project(':ElegantNetworkingCommon')
+    extraLibs project(':ElegantNetworkingCommon')
+    
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8', project(':ElegantNetworkingAnnotationProcessor')
-    compile project(':ElegantNetworkingCommon')
 }
 
 jar {
+    from {
+        configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
+    }
     if (!testBuild)
         exclude('hohserg/elegant/networking/test/**')
 
