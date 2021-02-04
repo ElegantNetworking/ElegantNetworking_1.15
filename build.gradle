@@ -101,7 +101,7 @@ dependencies {
 
     compile fg.deobf("codechicken:CodeChickenLib:1.15.2-3.3.4.402:universal")
 
-    compile project(':ElegantNetworkingCommon')
+    compile(project(':ElegantNetworkingCommon')) { transitive = false }
     extraLibs project(':ElegantNetworkingCommon')
     
     compileOnly 'org.projectlombok:lombok:1.18.8'
