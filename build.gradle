@@ -129,6 +129,7 @@ jar {
         ])
     }
 }
+jar.finalizedBy('reobfJar') 
 
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
